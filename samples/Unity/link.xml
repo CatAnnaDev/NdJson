@@ -1,0 +1,6 @@
+<linker>
+  <assembly fullname="NdJson" preserve="all" />
+  <assembly fullname="Assembly-CSharp">
+    <type fullname="*NdjsonConverter" preserve="all" />
+  </assembly>
+</linker>

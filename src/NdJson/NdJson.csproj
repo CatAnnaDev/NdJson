@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net8.0</TargetFrameworks>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RootNamespace>NdJson</RootNamespace>
+    <AssemblyName>NdJson</AssemblyName>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <EnableTrimAnalyzer>false</EnableTrimAnalyzer>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <PackageId>NdJson</PackageId>
+    <Version>1.0.0</Version>
+    <Description>Serialiseur et parseur NDJSON zero-dependance, attributs et source generator, compatible Unity, Godot et .NET.</Description>
+    <IncludeBuildOutput>true</IncludeBuildOutput>
+    <DevelopmentDependency>false</DevelopmentDependency>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>ndjson;jsonl;json;serializer;unity;godot;source-generator;aot</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Memory" Version="4.5.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NdJson.SourceGenerator\NdJson.SourceGenerator.csproj"
+                      OutputItemType="Analyzer"
+                      ReferenceOutputAssembly="false"
+                      PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\NdJson.SourceGenerator\bin\$(Configuration)\netstandard2.0\NdJson.SourceGenerator.dll"
+          Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="$(MSBuildThisFileDirectory)..\..\README.md" Pack="true" PackagePath="/" Visible="false" />
+  </ItemGroup>
+
+</Project>

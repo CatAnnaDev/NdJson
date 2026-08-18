@@ -1,0 +1,13 @@
+bin/
+obj/
+generated/
+artifacts/
+*.user
+*.suo
+*.userprefs
+.vs/
+.vscode/
+.idea/
+.DS_Store
+*.nupkg
+*.snupkg

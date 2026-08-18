@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>NdJson.EngineCompat</AssemblyName>
+    <RootNamespace>NdJson.EngineCompat</RootNamespace>
+    <DefineConstants>$(DefineConstants);UNITY_2019_1_OR_NEWER;GODOT</DefineConstants>
+    <NoWarn>$(NoWarn);CS0649;CS0169</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="../../src/NdJson/Integration/UnityConverters.cs" Link="UnityConverters.cs" />
+    <Compile Include="../../src/NdJson/Integration/GodotConverters.cs" Link="GodotConverters.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/NdJson/NdJson.csproj" />
+  </ItemGroup>
+
+</Project>
